@@ -21,7 +21,8 @@
     "test": "tape test/index.js"
   },
   "dependencies": {
-    "bigi": "KenanY/bigi#is-probable-prime"
+    "bigi": "KenanY/bigi#is-probable-prime",
+    "setimmediate": "^1.0.2"
   },
   "devDependencies": {
     "lodash.isfunction": "^2.4.1",
