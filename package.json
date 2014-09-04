@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "bigi": "KenanY/bigi#is-probable-prime",
+    "bitwise-or": "^1.0.0",
     "secure-random-bytes": "^1.0.1",
     "setimmediate": "^1.0.2"
   },

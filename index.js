@@ -3,6 +3,7 @@ require('setimmediate');
 var BigInteger = require('bigi');
 var randomBytes = require('secure-random-bytes');
 var isFunction = require('lodash.isfunction');
+var bitwiseOR = require('bitwise-or');
 
 var GCD_30_DELTA = [6, 4, 2, 4, 2, 4, 6, 2];
 var THIRTY = new BigInteger(null);
@@ -18,10 +19,6 @@ var rng = {
     }
   }
 };
-
-function bitwiseOR(x, y) {
-  return x | y;
-}
 
 function generateRandom(bits) {
   var num = new BigInteger(bits, rng);
