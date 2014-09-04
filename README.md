@@ -1,5 +1,7 @@
 # find-prime
 
+[![Build Status](https://img.shields.io/travis/KenanY/find-prime.svg)](https://travis-ci.org/KenanY/find-prime)
+
 Find a prime.
 
 ## Example
