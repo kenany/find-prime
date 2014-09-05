@@ -18,6 +18,7 @@
     "test": "test"
   },
   "scripts": {
+    "example": "browserify example/workers/index.js > example/workers/bundle.js",
     "test": "tape test/index.js"
   },
   "dependencies": {
@@ -27,8 +28,13 @@
     "setimmediate": "^1.0.2"
   },
   "devDependencies": {
+    "browserify": "^5.11.1",
+    "estimate-cores": "^1.0.0",
+    "global": "^4.2.1",
     "lodash.isfunction": "^2.4.1",
     "lodash.isnull": "^2.4.1",
-    "tape": "^2.14.0"
+    "mercury": "^6.0.2",
+    "tape": "^2.14.0",
+    "webworkify": "^1.0.0"
   }
 }
