@@ -28,13 +28,13 @@
     "setimmediate": "^1.0.2"
   },
   "devDependencies": {
-    "browserify": "^5.11.1",
+    "browserify": "^13.1.0",
     "estimate-cores": "^1.0.0",
     "global": "^4.2.1",
-    "lodash.isfunction": "^2.4.1",
-    "lodash.isnull": "^2.4.1",
-    "mercury": "^6.0.2",
-    "tape": "^2.14.0",
+    "lodash.isfunction": "^3.0.8",
+    "lodash.isnull": "^3.0.0",
+    "mercury": "^14.1.0",
+    "tape": "^4.6.0",
     "webworkify": "^1.0.0"
   }
 }
