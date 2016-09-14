@@ -1,4 +1,5 @@
 var document = require('global/document');
+var window = require('global/window');
 var mercury = require('mercury');
 
 var Render = require('./render');

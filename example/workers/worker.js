@@ -3,6 +3,7 @@ var work = require('webworkify');
 var randomBytes = require('secure-random-bytes');
 var bitwiseOR = require('bitwise-or');
 var estimateCores = require('estimate-cores');
+var window = require('global/window');
 
 var BITS = 1024;
 
