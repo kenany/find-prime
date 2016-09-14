@@ -32,7 +32,6 @@
     "estimate-cores": "^1.0.0",
     "global": "^4.2.1",
     "lodash.isfunction": "^3.0.8",
-    "lodash.isnull": "^2.4.1",
     "mercury": "^6.0.2",
     "tape": "^4.6.0",
     "webworkify": "^1.0.0"
