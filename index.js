@@ -1,5 +1,3 @@
-require('setimmediate');
-
 var BigInteger = require('bigi');
 var randomBytes = require('secure-random-bytes');
 var isFunction = require('lodash.isfunction');
@@ -74,9 +72,7 @@ function findPrime(bits, options, callback) {
     num.dAddOffset(GCD_30_DELTA[deltaIdx++ % 8], 0);
   } while (maxBlockTime < 0 || (+new Date() - start < maxBlockTime));
 
-  setImmediate(function() {
-    findPrime(bits, options, callback);
-  });
+  findPrime(bits, options, callback);
 }
 
 module.exports = findPrime;

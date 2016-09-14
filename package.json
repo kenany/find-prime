@@ -24,8 +24,7 @@
   "dependencies": {
     "bigi": "^1.4.2",
     "bitwise-or": "^1.0.0",
-    "secure-random-bytes": "^1.0.1",
-    "setimmediate": "^1.0.2"
+    "secure-random-bytes": "^1.0.1"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
