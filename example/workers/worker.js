@@ -13,7 +13,7 @@ THIRTY.fromInt(30);
 var rng = {
   nextBytes: function(x) {
     var b = randomBytes(x.length);
-    for(var i = 0, length = x.length; i < length; ++i) {
+    for (var i = 0, length = x.length; i < length; ++i) {
       x[i] = b.charCodeAt(i);
     }
   }
@@ -53,8 +53,9 @@ estimateCores(function(error, coreCount) {
 var found = false;
 
 function onWorkerMessage(ev) {
+  var progress;
   if (ev.data.fermat) {
-    var progress = 'Finding a prime... ' + Math.floor(ev.data.fermat * 100);
+    progress = 'Finding a prime... ' + Math.floor(ev.data.fermat * 100);
     if (ev.currentTarget === workers[0]) {
       window.mercuryState.progress0.set(progress);
     }
@@ -68,7 +69,7 @@ function onWorkerMessage(ev) {
   }
 
   if (ev.data.mr) {
-    var progress = 'Verifying prime... ' + Math.floor(ev.data.mr * 100);
+    progress = 'Verifying prime... ' + Math.floor(ev.data.mr * 100);
     if (ev.currentTarget === workers[0]) {
       window.mercuryState.progress0.set(progress);
     }

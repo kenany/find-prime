@@ -13,7 +13,7 @@ THIRTY.fromInt(30);
 var rng = {
   nextBytes: function(x) {
     var b = randomBytes(x.length);
-    for(var i = 0, length = x.length; i < length; ++i) {
+    for (var i = 0, length = x.length; i < length; ++i) {
       x[i] = b.charCodeAt(i);
     }
   }
@@ -68,7 +68,7 @@ function findPrime(bits, options, callback) {
       num = generateRandom(bits);
     }
 
-    if(num.isProbablePrime(mrTests)) {
+    if (num.isProbablePrime(mrTests)) {
       return callback(null, num);
     }
 

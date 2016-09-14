@@ -19,6 +19,7 @@
   },
   "scripts": {
     "example": "browserify example/workers/index.js > example/workers/bundle.js",
+    "pretest": "eslint *.js test/index.js example/index.js example/workers/{index,render,worker}.js",
     "test": "tape test/index.js"
   },
   "dependencies": {
@@ -28,7 +29,9 @@
     "secure-random-bytes": "^1.0.1"
   },
   "devDependencies": {
+    "@kenan/eslint-config": "^3.0.0",
     "browserify": "^13.1.0",
+    "eslint": "^3.5.0",
     "estimate-cores": "^1.0.0",
     "global": "^4.2.1",
     "lodash.isfunction": "^3.0.8",
