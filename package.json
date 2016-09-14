@@ -24,6 +24,7 @@
   "dependencies": {
     "bigi": "^1.4.2",
     "bitwise-or": "^1.0.0",
+    "once": "^1.4.0",
     "secure-random-bytes": "^1.0.1"
   },
   "devDependencies": {

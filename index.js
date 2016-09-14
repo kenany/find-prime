@@ -2,6 +2,7 @@ var BigInteger = require('bigi');
 var randomBytes = require('secure-random-bytes');
 var isFunction = require('lodash.isfunction');
 var bitwiseOR = require('bitwise-or');
+var once = require('once');
 
 var GCD_30_DELTA = [6, 4, 2, 4, 2, 4, 6, 2];
 var THIRTY = new BigInteger(null);
@@ -50,6 +51,8 @@ function findPrime(bits, options, callback) {
     callback = options;
     options = {};
   }
+
+  callback = once(callback);
 
   var num = generateRandom(bits);
 
