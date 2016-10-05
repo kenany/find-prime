@@ -73,6 +73,8 @@ function findPrime(bits, options, callback) {
     }
 
     num.dAddOffset(GCD_30_DELTA[deltaIdx++ % 8], 0);
+
+    /* eslint no-unmodified-loop-condition: 0 */
   } while (maxBlockTime < 0 || (+new Date() - start < maxBlockTime));
 
   findPrime(bits, options, callback);
