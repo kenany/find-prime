@@ -33,7 +33,7 @@
     "@kenan/eslint-config": "4.0.0",
     "@kenan/renovate-config": "1.1.1",
     "browserify": "14.5.0",
-    "eslint": "3.19.0",
+    "eslint": "4.18.2",
     "estimate-cores": "1.0.2",
     "global": "4.4.0",
     "mercury": "14.1.0",
