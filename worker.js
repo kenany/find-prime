@@ -12,7 +12,7 @@ module.exports = function(self) {
     self.postMessage(result);
   });
 
-  self.postMessage({found: false});
+  self.postMessage({ found: false });
 
   function findPrime(data) {
     var num = new BigInteger(data.hex, 16);
@@ -22,13 +22,13 @@ module.exports = function(self) {
     var workLoad = data.workLoad;
     for (var i = 0; i < workLoad; ++i) {
       if (isProbablePrime(num)) {
-        return {found: true, prime: num.toString(16)};
+        return { found: true, prime: num.toString(16) };
       }
 
       num.dAddOffset(GCD_30_DELTA[deltaIdx++ % 8], 0);
     }
 
-    return {found: false};
+    return { found: false };
   }
 
   function isProbablePrime(n) {
@@ -45,7 +45,7 @@ module.exports = function(self) {
       if (n.testBit(i)) {
         t = t.shiftLeft(1);
       }
-      self.postMessage({fermat: (bl - i) / bl});
+      self.postMessage({ fermat: (bl - i) / bl });
     }
     if (t.compareTo(n) > 0) {
       t = t.mod(n);
@@ -77,7 +77,7 @@ module.exports = function(self) {
       var x = a.modPow(d, n);
 
       if (x.equals(BigInteger.ONE) || x.equals(n1)) {
-        self.postMessage({mr: 1});
+        self.postMessage({ mr: 1 });
         continue;
       }
 
@@ -98,7 +98,7 @@ module.exports = function(self) {
         return false;
       }
 
-      self.postMessage({mr: i / k});
+      self.postMessage({ mr: i / k });
     }
 
     return true;

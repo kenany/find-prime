@@ -30,10 +30,10 @@
     "secure-random-bytes": "^1.0.1"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "4.0.0",
+    "@kenan/eslint-config": "6.0.0",
     "@kenan/renovate-config": "1.1.1",
     "browserify": "14.5.0",
-    "eslint": "3.19.0",
+    "eslint": "5.16.0",
     "estimate-cores": "1.0.2",
     "global": "4.4.0",
     "mercury": "14.1.0",
