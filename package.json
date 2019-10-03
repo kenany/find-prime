@@ -19,8 +19,9 @@
   },
   "scripts": {
     "example": "browserify example/workers/index.js > example/workers/bundle.js",
-    "pretest": "eslint *.js test/index.js example/index.js example/workers/{index,render,worker}.js",
-    "test": "tape test/index.js"
+    "lint": "eslint *.js test/index.js example/index.js example/workers/{index,render,worker}.js",
+    "test": "tape test/index.js",
+    "posttest": "npm run lint"
   },
   "dependencies": {
     "bigi": "^1.4.2",
@@ -30,10 +31,10 @@
     "secure-random-bytes": "^1.0.1"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "6.0.0",
+    "@kenan/eslint-config": "7.0.0",
     "@kenan/renovate-config": "1.1.1",
     "browserify": "16.5.0",
-    "eslint": "5.16.0",
+    "eslint": "6.5.1",
     "estimate-cores": "1.0.2",
     "global": "4.4.0",
     "mercury": "14.1.0",

@@ -58,7 +58,8 @@ function findPrime(bits, options, callback) {
 
   var deltaIdx = 0;
 
-  var mrTests = options.millerRabinTests || getMillerRabinTests(num.bitLength());
+  var mrTests = options.millerRabinTests
+    || getMillerRabinTests(num.bitLength());
 
   var maxBlockTime = options.maxBlockTime || 10;
 
@@ -69,7 +70,8 @@ function findPrime(bits, options, callback) {
     }
 
     if (num.isProbablePrime(mrTests)) {
-      return callback(null, num);
+      callback(null, num);
+      return;
     }
 
     num.dAddOffset(GCD_30_DELTA[deltaIdx++ % 8], 0);

@@ -1,7 +1,8 @@
-var findPrime = require('../');
 var test = require('tape');
 var isFunction = require('lodash.isfunction');
 var BigInteger = require('bigi');
+
+var findPrime = require('../');
 
 test('exports a function', function(t) {
   t.plan(1);
