@@ -17,9 +17,13 @@
   "directories": {
     "test": "test"
   },
+  "engines": {
+    "node": "10 || 12 || >=14"
+  },
   "scripts": {
     "example": "browserify example/workers/index.js > example/workers/bundle.js",
     "lint": "eslint *.js test/index.js example/index.js example/workers/{index,render,worker}.js",
+    "release": "semantic-release",
     "test": "tape test/index.js",
     "posttest": "npm run lint"
   },
@@ -33,11 +37,15 @@
   "devDependencies": {
     "@kenan/eslint-config": "^8.0.0",
     "@kenan/renovate-config": "1.4.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "browserify": "16.5.1",
+    "conventional-changelog-conventionalcommits": "^4.4.0",
     "eslint": "^7.6.0",
     "estimate-cores": "1.0.2",
     "global": "4.4.0",
     "mercury": "14.2.0",
+    "semantic-release": "^17.1.1",
     "tape": "5.0.1",
     "webworkify": "1.5.0"
   }

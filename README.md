@@ -1,8 +1,5 @@
 # find-prime
 
-[![Build Status](https://img.shields.io/travis/KenanY/find-prime.svg)](https://travis-ci.org/KenanY/find-prime)
-[![Dependency Status](https://img.shields.io/gemnasium/KenanY/find-prime.svg)](https://gemnasium.com/KenanY/find-prime)
-
 Find a prime.
 
 ## Example
