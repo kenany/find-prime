@@ -1,3 +1,15 @@
+## [2.0.0](https://github.com/KenanY/find-prime/compare/1.1.2...2.0.0) (2021-06-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v10 is no longer supported. The minimum
+supported version of Node.js is now v12.
+
+### Features
+
+* remove Node.js v10 support ([9cb20b0](https://github.com/KenanY/find-prime/commit/9cb20b0d5d934d08ef06a4467fe8c0ad9fe65574))
+
 ### [1.1.2](https://github.com/KenanY/find-prime/compare/1.1.1...1.1.2) (2020-09-13)
 
 
