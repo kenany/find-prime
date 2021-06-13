@@ -8,7 +8,7 @@
   ],
   "repository": "KenanY/find-prime",
   "license": "MIT",
-  "author": "Kenan Yildirim <kenan@kenany.me> (http://kenany.me/)",
+  "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
   "main": "index.js",
   "files": [
     "index.js",
@@ -18,7 +18,7 @@
     "test": "test"
   },
   "engines": {
-    "node": "10 || 12 || >=14"
+    "node": "12 || 14 || >=16"
   },
   "scripts": {
     "example": "browserify example/workers/index.js > example/workers/bundle.js",
@@ -42,11 +42,11 @@
     "browserify": "^17.0.0",
     "conventional-changelog-conventionalcommits": "^4.6.0",
     "eslint": "^7.28.0",
-    "estimate-cores": "1.0.2",
-    "global": "4.4.0",
-    "mercury": "14.2.0",
+    "estimate-cores": "^1.0.2",
+    "global": "^4.4.0",
+    "mercury": "^14.2.0",
     "semantic-release": "^17.4.3",
-    "tape": "5.2.2",
-    "webworkify": "1.5.0"
+    "tape": "^5.2.2",
+    "webworkify": "^1.5.0"
   }
 }
