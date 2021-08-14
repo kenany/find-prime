@@ -1,28 +1,28 @@
-var BigInteger = require('bigi');
-var randomBytes = require('secure-random-bytes');
-var isFunction = require('lodash.isfunction');
-var bitwiseOR = require('bitwise-or');
-var once = require('once');
+const BigInteger = require('bigi');
+const randomBytes = require('secure-random-bytes');
+const isFunction = require('lodash.isfunction');
+const bitwiseOR = require('bitwise-or');
+const once = require('once');
 
-var GCD_30_DELTA = [6, 4, 2, 4, 2, 4, 6, 2];
-var THIRTY = new BigInteger(null);
+const GCD_30_DELTA = [6, 4, 2, 4, 2, 4, 6, 2];
+const THIRTY = new BigInteger(null);
 THIRTY.fromInt(30);
 
 // bigi expects a generator that has a `nextBytes` method for filling an
 // _Array_ with random values.
-var rng = {
+const rng = {
   nextBytes: function(x) {
-    var b = randomBytes(x.length);
-    for (var i = 0, length = x.length; i < length; ++i) {
+    const b = randomBytes(x.length);
+    for (let i = 0, length = x.length; i < length; ++i) {
       x[i] = b.charCodeAt(i);
     }
   }
 };
 
 function generateRandom(bits) {
-  var num = new BigInteger(bits, rng);
+  const num = new BigInteger(bits, rng);
 
-  var bits1 = bits - 1;
+  const bits1 = bits - 1;
   if (!num.testBit(bits1)) {
     num.bitwiseTo(BigInteger.ONE.shiftLeft(bits1), bitwiseOR, num);
   }
@@ -54,16 +54,16 @@ function findPrime(bits, options, callback) {
 
   callback = once(callback);
 
-  var num = generateRandom(bits);
+  let num = generateRandom(bits);
 
-  var deltaIdx = 0;
+  let deltaIdx = 0;
 
-  var mrTests = options.millerRabinTests
+  const mrTests = options.millerRabinTests
     || getMillerRabinTests(num.bitLength());
 
-  var maxBlockTime = options.maxBlockTime || 10;
+  const maxBlockTime = options.maxBlockTime || 10;
 
-  var start = +new Date();
+  const start = +new Date();
   do {
     if (num.bitLength() > bits) {
       num = generateRandom(bits);

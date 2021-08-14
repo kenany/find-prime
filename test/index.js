@@ -1,18 +1,18 @@
-var test = require('tape');
-var isFunction = require('lodash.isfunction');
-var BigInteger = require('bigi');
+const test = require('tape');
+const isFunction = require('lodash.isfunction');
+const BigInteger = require('bigi');
 
-var findPrime = require('../');
+const findPrime = require('../');
 
-test('exports a function', function(t) {
+test('exports a function', (t) => {
   t.plan(1);
   t.ok(isFunction(findPrime));
 });
 
-test('returns a big integer', function(t) {
+test('returns a big integer', (t) => {
   t.plan(3);
-  t.doesNotThrow(function() {
-    findPrime(100, function(error, prime) {
+  t.doesNotThrow(() => {
+    findPrime(100, (error, prime) => {
       t.error(error);
       t.ok(prime instanceof BigInteger);
     });

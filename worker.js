@@ -1,26 +1,26 @@
-var BigInteger = require('bigi');
-var randomBytes = require('secure-random-bytes');
+const BigInteger = require('bigi');
+const randomBytes = require('secure-random-bytes');
 
-var GCD_30_DELTA = [6, 4, 2, 4, 2, 4, 6, 2];
+const GCD_30_DELTA = [6, 4, 2, 4, 2, 4, 6, 2];
 
-var BIG_TWO = new BigInteger(null);
+const BIG_TWO = new BigInteger(null);
 BIG_TWO.fromInt(2);
 
 module.exports = function(self) {
   self.addEventListener('message', function(ev) {
-    var result = findPrime(ev.data);
+    const result = findPrime(ev.data);
     self.postMessage(result);
   });
 
   self.postMessage({ found: false });
 
   function findPrime(data) {
-    var num = new BigInteger(data.hex, 16);
+    const num = new BigInteger(data.hex, 16);
 
-    var deltaIdx = 0;
+    let deltaIdx = 0;
 
-    var workLoad = data.workLoad;
-    for (var i = 0; i < workLoad; ++i) {
+    const workLoad = data.workLoad;
+    for (let i = 0; i < workLoad; ++i) {
       if (isProbablePrime(num)) {
         return { found: true, prime: num.toString(16) };
       }
@@ -33,11 +33,11 @@ module.exports = function(self) {
 
   function isProbablePrime(n) {
     // Inlined github.com/KenanY/fermat
-    var t = BigInteger.ONE;
-    var bl = n.bitLength();
+    let t = BigInteger.ONE;
+    let bl = n.bitLength();
     bl--;
-    var Bl = n.byteLength();
-    for (var i = bl; i >= 0; --i) {
+    const Bl = n.byteLength();
+    for (let i = bl; i >= 0; --i) {
       t = t.square();
       if (t.byteLength() > Bl) {
         t = t.mod(n);
@@ -58,30 +58,30 @@ module.exports = function(self) {
   }
 
   function runMillerRabin(n) {
-    var n1 = n.subtract(BigInteger.ONE);
+    const n1 = n.subtract(BigInteger.ONE);
 
-    var s = n1.getLowestSetBit();
+    const s = n1.getLowestSetBit();
     if (s <= 0) {
       return false;
     }
-    var d = n1.shiftRight(s);
+    const d = n1.shiftRight(s);
 
-    var k = getMillerRabinTests(n.bitLength());
-    var prng = getPrng();
-    var a;
-    for (var i = 0; i < k; ++i) {
+    const k = getMillerRabinTests(n.bitLength());
+    const prng = getPrng();
+    let a;
+    for (let i = 0; i < k; ++i) {
       do {
         a = new BigInteger(n.bitLength(), prng);
       } while (a.compareTo(BigInteger.ONE) <= 0 || a.compareTo(n1) >= 0);
 
-      var x = a.modPow(d, n);
+      let x = a.modPow(d, n);
 
       if (x.equals(BigInteger.ONE) || x.equals(n1)) {
         self.postMessage({ mr: 1 });
         continue;
       }
 
-      var j = s;
+      let j = s;
       while (--j) {
         x = x.modPowInt(2, n);
 
@@ -107,8 +107,8 @@ module.exports = function(self) {
   function getPrng() {
     return {
       nextBytes: function(x) {
-        var b = randomBytes(x.length);
-        for (var i = 0, length = x.length; i < length; ++i) {
+        const b = randomBytes(x.length);
+        for (let i = 0, length = x.length; i < length; ++i) {
           x[i] = b.charCodeAt(i);
         }
       }

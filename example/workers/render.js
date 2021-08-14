@@ -1,6 +1,6 @@
-var mercury = require('mercury');
+const mercury = require('mercury');
 
-var h = mercury.h;
+const h = mercury.h;
 
 function render(state) {
   return h('div.Container', [

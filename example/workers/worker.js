@@ -1,28 +1,28 @@
-var BigInteger = require('bigi');
-var work = require('webworkify');
-var randomBytes = require('secure-random-bytes');
-var bitwiseOR = require('bitwise-or');
-var estimateCores = require('estimate-cores');
-var window = require('global/window');
+const BigInteger = require('bigi');
+const work = require('webworkify');
+const randomBytes = require('secure-random-bytes');
+const bitwiseOR = require('bitwise-or');
+const estimateCores = require('estimate-cores');
+const window = require('global/window');
 
-var BITS = 1024;
+const BITS = 1024;
 
-var THIRTY = new BigInteger(null);
+const THIRTY = new BigInteger(null);
 THIRTY.fromInt(30);
 
-var rng = {
+const rng = {
   nextBytes: function(x) {
-    var b = randomBytes(x.length);
-    for (var i = 0, length = x.length; i < length; ++i) {
+    const b = randomBytes(x.length);
+    for (let i = 0, length = x.length; i < length; ++i) {
       x[i] = b.charCodeAt(i);
     }
   }
 };
 
 function generateRandom(bits) {
-  var num = new BigInteger(bits, rng);
+  const num = new BigInteger(bits, rng);
 
-  var bits1 = bits - 1;
+  const bits1 = bits - 1;
   if (!num.testBit(bits1)) {
     num.bitwiseTo(BigInteger.ONE.shiftLeft(bits1), bitwiseOR, num);
   }
@@ -31,16 +31,16 @@ function generateRandom(bits) {
   return num;
 }
 
-var num = generateRandom(BITS, rng);
+let num = generateRandom(BITS, rng);
 
-var workers = [];
+const workers = [];
 
 estimateCores(function(error, coreCount) {
   if (error) {
     throw error;
   }
 
-  for (var i = 0; i < coreCount - 1; i++) {
+  for (let i = 0; i < coreCount - 1; i++) {
     workers.push(work(require('../../worker')));
     workers[i].addEventListener('message', onWorkerMessage);
     workers[i].postMessage({
@@ -50,10 +50,10 @@ estimateCores(function(error, coreCount) {
   }
 });
 
-var found = false;
+let found = false;
 
 function onWorkerMessage(ev) {
-  var progress;
+  let progress;
   if (ev.data.fermat) {
     progress = 'Finding a prime... ' + Math.floor(ev.data.fermat * 100);
     if (ev.currentTarget === workers[0]) {

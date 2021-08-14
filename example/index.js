@@ -1,4 +1,4 @@
-var findPrime = require('../');
+const findPrime = require('../');
 
 findPrime(100, function(error, data) {
   if (error) {

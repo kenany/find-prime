@@ -1,10 +1,10 @@
-var document = require('global/document');
-var window = require('global/window');
-var mercury = require('mercury');
+const document = require('global/document');
+const window = require('global/window');
+const mercury = require('mercury');
 
-var Render = require('./render');
+const Render = require('./render');
 
-var state = mercury.struct({
+const state = mercury.struct({
   progress0: mercury.value(0),
   progress1: mercury.value(0),
   progress2: mercury.value(0),
