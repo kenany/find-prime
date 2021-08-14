@@ -45,7 +45,7 @@
     "estimate-cores": "^1.0.2",
     "global": "^4.4.0",
     "mercury": "^14.2.0",
-    "semantic-release": "^17.4.3",
+    "semantic-release": "^17.4.4",
     "tape": "^5.2.2",
     "webworkify": "^1.5.0"
   }
