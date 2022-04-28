@@ -45,7 +45,7 @@
     "global": "^4.4.0",
     "mercury": "^14.2.0",
     "semantic-release": "^19.0.2",
-    "tape": "^5.5.2",
+    "tape": "^5.5.3",
     "webworkify": "^1.5.0"
   }
 }
