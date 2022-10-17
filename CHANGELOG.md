@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/KenanY/find-prime/compare/2.0.2...3.0.0) (2022-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v12 is no longer supported.
+
+### Features
+
+* drop Node.js v12 support ([933ac32](https://github.com/KenanY/find-prime/commit/933ac32850ab45785765dbcec23bb190b5838430))
+
 ### [2.0.2](https://github.com/KenanY/find-prime/compare/2.0.1...2.0.2) (2021-09-30)
 
 
