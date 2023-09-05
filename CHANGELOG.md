@@ -1,3 +1,14 @@
+## [4.0.0](https://github.com/kenany/find-prime/compare/3.0.2...4.0.0) (2023-09-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v14 and v16 are no longer supported.
+
+### Features
+
+* drop Node.js v14 and v16 ([5f6f9a5](https://github.com/kenany/find-prime/commit/5f6f9a5d7fe88ed96b9e39cfe6a1edee13462bdc))
+
 ## [3.0.2](https://github.com/KenanY/find-prime/compare/3.0.1...3.0.2) (2023-04-29)
 
 
