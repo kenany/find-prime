@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/kenany/find-prime/compare/4.0.0...4.0.1) (2023-10-14)
+
+
+### Bug Fixes
+
+* **deps:** secure-random-bytes@5.0.0 ([6e38b72](https://github.com/kenany/find-prime/commit/6e38b72e2b2c9630f9f85e26a92373addc1fecbd))
+
 ## [4.0.0](https://github.com/kenany/find-prime/compare/3.0.2...4.0.0) (2023-09-05)
 
 
