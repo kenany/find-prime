@@ -41,7 +41,7 @@
     "browserify": "^17.0.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "eslint": "^8.52.0",
-    "estimate-cores": "^2.0.0",
+    "estimate-cores": "^2.0.1",
     "global": "^4.4.0",
     "mercury": "^14.2.0",
     "semantic-release": "^22.0.5",
