@@ -6,8 +6,8 @@ const GCD_30_DELTA = [6, 4, 2, 4, 2, 4, 6, 2];
 const BIG_TWO = new BigInteger(null);
 BIG_TWO.fromInt(2);
 
-module.exports = function(self) {
-  self.addEventListener('message', function(ev) {
+module.exports = (self) => {
+  self.addEventListener('message', (ev) => {
     const result = findPrime(ev.data);
     self.postMessage(result);
   });
@@ -106,17 +106,17 @@ module.exports = function(self) {
 
   function getPrng() {
     return {
-      nextBytes: function(x) {
+      nextBytes(x) {
         const b = randomBytes(x.length);
         for (let i = 0, length = x.length; i < length; ++i) {
           x[i] = b.charCodeAt(i);
         }
-      }
+      },
     };
   }
 
   function getMillerRabinTests(bits) {
-    if (bits <= 100) return 27;
+    // biome-ignore-start lint/style/useBlockStatements: cleaner
     if (bits <= 150) return 18;
     if (bits <= 200) return 15;
     if (bits <= 250) return 12;
@@ -128,5 +128,6 @@ module.exports = function(self) {
     if (bits <= 800) return 4;
     if (bits <= 1250) return 3;
     return 2;
+    // biome-ignore-end lint/style/useBlockStatements: cleaner
   }
 };

@@ -11,12 +11,12 @@ THIRTY.fromInt(30);
 // bigi expects a generator that has a `nextBytes` method for filling an
 // _Array_ with random values.
 const rng = {
-  nextBytes: function(x) {
+  nextBytes(x) {
     const b = randomBytes(x.length);
     for (let i = 0, length = x.length; i < length; ++i) {
       x[i] = b.charCodeAt(i);
     }
-  }
+  },
 };
 
 function generateRandom(bits) {
@@ -32,6 +32,7 @@ function generateRandom(bits) {
 }
 
 function getMillerRabinTests(bits) {
+  // biome-ignore-start lint/style/useBlockStatements: cleaner
   if (bits <= 100) return 27;
   if (bits <= 150) return 18;
   if (bits <= 200) return 15;
@@ -44,6 +45,7 @@ function getMillerRabinTests(bits) {
   if (bits <= 800) return 4;
   if (bits <= 1250) return 3;
   return 2;
+  // biome-ignore-end lint/style/useBlockStatements: cleaner
 }
 
 function findPrime(bits, options, callback) {
@@ -58,12 +60,12 @@ function findPrime(bits, options, callback) {
 
   let deltaIdx = 0;
 
-  const mrTests = options.millerRabinTests
-    || getMillerRabinTests(num.bitLength());
+  const mrTests =
+    options.millerRabinTests || getMillerRabinTests(num.bitLength());
 
   const maxBlockTime = options.maxBlockTime || 10;
 
-  const start = +new Date();
+  const start = Date.now();
   do {
     if (num.bitLength() > bits) {
       num = generateRandom(bits);
@@ -75,9 +77,7 @@ function findPrime(bits, options, callback) {
     }
 
     num.dAddOffset(GCD_30_DELTA[deltaIdx++ % 8], 0);
-
-    /* eslint no-unmodified-loop-condition: 0 */
-  } while (maxBlockTime < 0 || (+new Date() - start < maxBlockTime));
+  } while (maxBlockTime < 0 || Date.now() - start < maxBlockTime);
 
   findPrime(bits, options, callback);
 }

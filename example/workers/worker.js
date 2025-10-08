@@ -11,12 +11,12 @@ const THIRTY = new BigInteger(null);
 THIRTY.fromInt(30);
 
 const rng = {
-  nextBytes: function(x) {
+  nextBytes(x) {
     const b = randomBytes(x.length);
     for (let i = 0, length = x.length; i < length; ++i) {
       x[i] = b.charCodeAt(i);
     }
-  }
+  },
 };
 
 function generateRandom(bits) {
@@ -35,7 +35,7 @@ let num = generateRandom(BITS, rng);
 
 const workers = [];
 
-estimateCores(function(error, coreCount) {
+estimateCores((error, coreCount) => {
   if (error) {
     throw error;
   }
@@ -45,7 +45,7 @@ estimateCores(function(error, coreCount) {
     workers[i].addEventListener('message', onWorkerMessage);
     workers[i].postMessage({
       hex: num.toString(16),
-      workLoad: 100
+      workLoad: 100,
     });
   }
 });
@@ -55,28 +55,24 @@ let found = false;
 function onWorkerMessage(ev) {
   let progress;
   if (ev.data.fermat) {
-    progress = 'Finding a prime... ' + Math.floor(ev.data.fermat * 100);
+    progress = `Finding a prime... ${Math.floor(ev.data.fermat * 100)}`;
     if (ev.currentTarget === workers[0]) {
       window.mercuryState.progress0.set(progress);
-    }
-    else if (ev.currentTarget === workers[1]) {
+    } else if (ev.currentTarget === workers[1]) {
       window.mercuryState.progress1.set(progress);
-    }
-    else if (ev.currentTarget === workers[2]) {
+    } else if (ev.currentTarget === workers[2]) {
       window.mercuryState.progress2.set(progress);
     }
     return;
   }
 
   if (ev.data.mr) {
-    progress = 'Verifying prime... ' + Math.floor(ev.data.mr * 100);
+    progress = `Verifying prime... ${Math.floor(ev.data.mr * 100)}`;
     if (ev.currentTarget === workers[0]) {
       window.mercuryState.progress0.set(progress);
-    }
-    else if (ev.currentTarget === workers[1]) {
+    } else if (ev.currentTarget === workers[1]) {
       window.mercuryState.progress1.set(progress);
-    }
-    else if (ev.currentTarget === workers[2]) {
+    } else if (ev.currentTarget === workers[2]) {
       window.mercuryState.progress2.set(progress);
     }
     return;
@@ -87,9 +83,9 @@ function onWorkerMessage(ev) {
   }
 
   if (ev.data.found) {
-    workers.forEach(function(w) {
+    for (const w of workers) {
       w.terminate();
-    });
+    }
     found = true;
     window.mercuryState.prime.set(new BigInteger(ev.data.prime, 16).toString());
   }
@@ -98,12 +94,12 @@ function onWorkerMessage(ev) {
     num = generateRandom(BITS, rng);
   }
 
-  workers.forEach(function(w) {
+  for (const w of workers) {
     w.postMessage({
       hex: num.toString(16),
-      workLoad: 100
+      workLoad: 100,
     });
-  });
+  }
 
-  num.dAddOffset(100 * 30 / 8, 0);
+  num.dAddOffset((100 * 30) / 8, 0);
 }

@@ -18,11 +18,11 @@
     "test": "test"
   },
   "engines": {
-    "node": "18 || >=20"
+    "node": "20 || 22 || >=24"
   },
   "scripts": {
     "example": "browserify example/workers/index.js > example/workers/bundle.js",
-    "lint": "eslint *.js test/index.js example/index.js example/workers/{index,render,worker}.js",
+    "lint": "biome check .",
     "release": "semantic-release",
     "test": "tape test/index.js",
     "posttest": "npm run lint"
@@ -35,12 +35,12 @@
     "secure-random-bytes": "^5.0.1"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "^11.1.18",
+    "@biomejs/biome": "2.2.5",
+    "@kenan/biome-config": "1.0.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "browserify": "^17.0.1",
     "conventional-changelog-conventionalcommits": "^9.1.0",
-    "eslint": "^8.57.1",
     "estimate-cores": "^2.0.1",
     "global": "^4.4.0",
     "mercury": "^14.2.0",

@@ -2,25 +2,24 @@ name: nodejs
 on: [pull_request, push]
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [18, 20]
-        os: [ubuntu-latest]
+        node-version: [20, 22, 24]
     steps:
-    - name: Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v5.0.0
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Update npm
-      run: |
-        npm install -g npm
-        npm --version
-    - uses: actions/checkout@v5.0.0
-    - name: Install dependencies
-      uses: bahmutov/npm-install@v1.11.1
-      with:
-        useLockFile: false
-    - run: npm ls
-    - name: Test
-      run: npm test
+      - name: Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v5.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Update npm
+        run: |
+          npm install -g npm
+          npm --version
+      - uses: actions/checkout@v5.0.0
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1.11.1
+        with:
+          useLockFile: false
+      - run: npm ls
+      - name: Test
+        run: npm test
