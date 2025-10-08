@@ -1,3 +1,13 @@
+## [5.0.0](https://github.com/kenany/find-prime/compare/4.0.2...5.0.0) (2025-10-08)
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v18 is no longer supported.
+
+### Features
+
+* drop Node.js v18 support ([67d1306](https://github.com/kenany/find-prime/commit/67d1306bc3f6023858c7e3ad6af4116c020c5379))
+
 ## [4.0.2](https://github.com/kenany/find-prime/compare/4.0.1...4.0.2) (2023-11-08)
 
 
