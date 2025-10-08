@@ -1,10 +1,10 @@
 const findPrime = require('../');
 
-findPrime(100, function(error, data) {
+findPrime(100, (error, data) => {
   if (error) {
     throw error;
   }
 
-  /* eslint no-console: 0 */
+  // biome-ignore lint/suspicious/noConsole: example
   console.log(data.toString());
 });
