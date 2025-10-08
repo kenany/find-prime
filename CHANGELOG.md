@@ -1,3 +1,9 @@
+## [5.0.1](https://github.com/kenany/find-prime/compare/5.0.0...5.0.1) (2025-10-08)
+
+### Bug Fixes
+
+* **deps:** secure-random-bytes@6.0.1 ([35db66e](https://github.com/kenany/find-prime/commit/35db66eb348083246cc38c90595ce24dacd24e98))
+
 ## [5.0.0](https://github.com/kenany/find-prime/compare/4.0.2...5.0.0) (2025-10-08)
 
 ### ⚠ BREAKING CHANGES
