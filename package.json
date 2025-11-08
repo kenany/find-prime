@@ -35,8 +35,8 @@
     "secure-random-bytes": "^6.0.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.6",
-    "@kenan/biome-config": "1.0.4",
+    "@biomejs/biome": "2.3.4",
+    "@kenan/biome-config": "1.0.6",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "browserify": "17.0.1",
