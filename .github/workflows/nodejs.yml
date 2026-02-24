@@ -1,5 +1,21 @@
 name: nodejs
-on: [pull_request, push]
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+  merge_group:
+
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -7,19 +23,39 @@ jobs:
       matrix:
         node-version: [20, 22, 24]
     steps:
-      - name: Node.js ${{ matrix.node-version }}
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - run: corepack enable
+
+      - name: Setup Node.js
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Update npm
-        run: |
-          npm install -g npm
-          npm --version
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+          cache: pnpm
+
       - name: Install dependencies
-        uses: bahmutov/npm-install@3e063b974f0d209807684aa23e534b3dde517fd9 # v1.11.2
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm test
+
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - run: corepack enable
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
-          useLockFile: false
-      - run: npm ls
-      - name: Test
-        run: npm test
+          node-version: 24.11.0
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
