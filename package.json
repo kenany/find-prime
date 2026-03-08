@@ -41,7 +41,7 @@
     "@containerbase/semantic-release-pnpm": "1.3.22",
     "@kenan/biome-config": "1.0.6",
     "browserify": "17.0.1",
-    "conventional-changelog-conventionalcommits": "9.2.0",
+    "conventional-changelog-conventionalcommits": "9.3.0",
     "estimate-cores": "2.0.1",
     "global": "4.4.0",
     "mercury": "14.2.0",
