@@ -22,7 +22,7 @@ importers:
         version: 1.4.0
       secure-random-bytes:
         specifier: ^6.0.2
-        version: 6.0.2
+        version: 6.0.3
     devDependencies:
       '@biomejs/biome':
         specifier: 2.4.12
@@ -1837,8 +1837,8 @@ packages:
     resolution: {integrity: sha512-x/+Cz4YrimQxQccJf5mKEbIa1NzeCRNI5Ecl/ekmlYaampdNLPalVyIcCZNNH3MvmqBugV5TMYZXv0ljslUlaw==}
     engines: {node: '>= 0.4'}
 
-  secure-random-bytes@6.0.2:
-    resolution: {integrity: sha512-TvJtMM5p/hj+03gPgtTwlWpgkEeBphDIck0Cw5uCKU3SbDCg4zzS7olH/lAaAx+IM8EX0yZtxWfWS0wu+3Z+Eg==}
+  secure-random-bytes@6.0.3:
+    resolution: {integrity: sha512-ffqMn6/R5vYvqri6TEQxF2gKGbN3hcbh/wt2imr6AWJvn+KK8NzoVfJUoDrFswlTNO1Su/0mXBxe8Qhx1FU16A==}
     engines: {node: 20 || 22 || >=24}
 
   secure-random-octet@5.0.2:
@@ -4367,7 +4367,7 @@ snapshots:
       es-errors: 1.3.0
       is-regex: 1.2.1
 
-  secure-random-bytes@6.0.2:
+  secure-random-bytes@6.0.3:
     dependencies:
       secure-random-octet: 5.0.2
 
