@@ -22,7 +22,7 @@ importers:
         version: 1.4.0
       secure-random-bytes:
         specifier: ^6.0.3
-        version: 6.0.3
+        version: 6.0.4
     devDependencies:
       '@biomejs/biome':
         specifier: 2.4.14
@@ -901,8 +901,8 @@ packages:
     resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
     engines: {node: '>= 0.4'}
 
-  get-random-values@4.1.1:
-    resolution: {integrity: sha512-B1Z9TN7MNsoBIaCpEsQu9gdYJ/hmMfO07KSvb/rZ0UnZACmsIcMW0ogBx44XjHWbRpRIBeF63dZ/JSCpm23qJA==}
+  get-random-values@4.1.2:
+    resolution: {integrity: sha512-wSryUwTGxprpTZqyA2BLt3s/nnk49aeUiaVcoGeZckvu1NpC8nueUO6D74VfXy/BEpRNL7DAD/dgPVot5chruw==}
     engines: {node: 20 || 22 || >=24}
 
   get-stream@6.0.1:
@@ -1837,12 +1837,12 @@ packages:
     resolution: {integrity: sha512-x/+Cz4YrimQxQccJf5mKEbIa1NzeCRNI5Ecl/ekmlYaampdNLPalVyIcCZNNH3MvmqBugV5TMYZXv0ljslUlaw==}
     engines: {node: '>= 0.4'}
 
-  secure-random-bytes@6.0.3:
-    resolution: {integrity: sha512-ffqMn6/R5vYvqri6TEQxF2gKGbN3hcbh/wt2imr6AWJvn+KK8NzoVfJUoDrFswlTNO1Su/0mXBxe8Qhx1FU16A==}
+  secure-random-bytes@6.0.4:
+    resolution: {integrity: sha512-7WWlUkYbw+XNr85bHc808aSSLLzF/vr4uHTn9iF2wifpuw7yhNw3+hFC5Pqdqpnid45BBrDmJIqjh55RtDAKhQ==}
     engines: {node: 20 || 22 || >=24}
 
-  secure-random-octet@5.0.2:
-    resolution: {integrity: sha512-hi4mzNbllXdAhUtzXlqe/fE/6Op0AnNOEwI67KXcaTzLPiLSUtf25tzPxBNY3aQgz90C+hB3F9JLkh8qGnXTFA==}
+  secure-random-octet@5.0.4:
+    resolution: {integrity: sha512-2EfppEeTsl2E9K+CHyTXFOnJZ0s3xxEPeASyqFZ9q29eNT8gAiGpF7znWkLzFAPrghn4zgG+JNDeG7jIHxTmtA==}
     engines: {node: 20 || 22 || >=24}
 
   semantic-release@25.0.3:
@@ -3422,7 +3422,7 @@ snapshots:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
 
-  get-random-values@4.1.1:
+  get-random-values@4.1.2:
     dependencies:
       window-or-global: 1.0.1
 
@@ -4367,13 +4367,13 @@ snapshots:
       es-errors: 1.3.0
       is-regex: 1.2.1
 
-  secure-random-bytes@6.0.3:
+  secure-random-bytes@6.0.4:
     dependencies:
-      secure-random-octet: 5.0.2
+      secure-random-octet: 5.0.4
 
-  secure-random-octet@5.0.2:
+  secure-random-octet@5.0.4:
     dependencies:
-      get-random-values: 4.1.1
+      get-random-values: 4.1.2
 
   semantic-release@25.0.3:
     dependencies:
