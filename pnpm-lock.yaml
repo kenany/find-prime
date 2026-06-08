@@ -21,7 +21,7 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       secure-random-bytes:
-        specifier: ^7.0.0
+        specifier: ^7.0.1
         version: 7.0.1
     devDependencies:
       '@biomejs/biome':
